@@ -1,0 +1,41 @@
+<div id="index_main">
+  <div class="header"></div>
+
+  <div class="topbar">
+    <%= link_to "Secretube", welcome_index_path, class: "home_btn" %>
+
+    <%# if logged_in? %>
+    <%#= link_to current_user.email, dashboard_url, class: "login_btn" %>
+    <%# else %>
+    <%= link_to t("login"), '/', class: "login_btn" %>
+    <%# end %>
+
+  </div>
+  <div class="placeholder"></div>
+
+  <div class="slogan">
+    <h2><%= t(".slogan_h2") %></h2>
+
+    <p><%= t(".slogan_p1") %></p>
+    <p><%= t(".slogan_p2") %></p>
+    <p><%= t(".slogan_p3") %></p>
+    <p><%= t(".slogan_p4") %></p>
+
+    <%# if logged_in? %>
+    <%#= link_to t("my_account"), dashboard_url, class: "register_btn" %>
+    <%# else %>
+    <%= link_to t("create_account"), '/', class: "register_btn" %>
+    <%# end %>
+
+  </div>
+
+  <div class="demo-show">
+    <div class="imgs">
+      <div class="img demo-safari"><%= image_tag("welcome/safari.png") %></div>
+    </div>
+    <div class="imgs">
+      <div class="img demo-iphone"><%= image_tag("welcome/iphone.png") %></div>
+      <div class="img demo-ipad"><%= image_tag("welcome/ipad.png") %></div>
+    </div>
+  </div>
+</div>

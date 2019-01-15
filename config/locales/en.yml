@@ -1,33 +1,29 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t 'hello'
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t('hello') %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# The following keys must be escaped otherwise they will not be retrieved by
-# the default I18n backend:
-#
-# true, false, on, off, yes, no
-#
-# Instead, surround them with single quotes.
-#
-# en:
-#   'true': 'foo'
-#
-# To learn more, please read the Rails Internationalization guide
-# available at http://guides.rubyonrails.org/i18n.html.
-
 en:
-  hello: "Hello world"
+  login: "Login"
+  password: "Password"
+  password_confirmation: "Password Again"
+  create_account: "CREATE ACCOUNT"
+  my_account: "My Account"
+  email_not_found: "Not Found"
+  wrong_password: "Wrong"
+  logout: "Logout"
+  help_page: "Helper"
+  you_need_more_coins: "You Need More Coins."
+  create_success: "Create Success."
+  system_is_too_busy: "System is Too Busy."
+  create_tube: "Create a New Secret Tube"
+  addr: "Addr"
+  port: "Port"
+  encryption: "Encryption"
+  wrong_params: "Wrong Parameters"
+  fatal_error: "Fatal Error, Please Email Hello233World@Gmail.com"
+
+
+  welcome:
+    index:
+      slogan_h2: "Secret Tube"
+      slogan_p1: "More Fast"
+      slogan_p2: "More Secret"
+      slogan_p3: "Let You Free"
+      slogan_p4: "Do What You Love"
+

@@ -45,7 +45,7 @@ set :pty, true
 # set :ssh_options, verify_host_key: :secure
 
 # puma config
-set :puma_bind, "tcp://0.0.0.0:3000"
+set :puma_bind, "tcp://0.0.0.0:3030"
 set :puma_preload_app, true
 set :puma_prune_bundler, true
 set :puma_tag, fetch(:application)

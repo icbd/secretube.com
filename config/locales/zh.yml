@@ -1,0 +1,29 @@
+zh:
+  login: "登录"
+  password: "密码"
+  password_confirmation: "重复密码"
+  create_account: "创建账号"
+  my_account: "My Account"
+  email_not_found: "Not Found"
+  wrong_password: "Wrong"
+  logout: "Logout"
+  help_page: "Helper"
+  you_need_more_coins: "You Need More Coins."
+  create_success: "Create Success."
+  system_is_too_busy: "System is Too Busy."
+  create_tube: "Create a New Secret Tube"
+  addr: "Addr"
+  port: "Port"
+  encryption: "Encryption"
+  wrong_params: "Wrong Parameters"
+  fatal_error: "Fatal Error, Please Email Hello233World@Gmail.com"
+
+
+  welcome:
+    index:
+      slogan_h2: "Secret Tube"
+      slogan_p1: "更快"
+      slogan_p2: "更隐私"
+      slogan_p3: "让你自由"
+      slogan_p4: "做你想做的"
+

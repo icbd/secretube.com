@@ -15,5 +15,11 @@ module SecretubeCom
     # Application configuration can go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded after loading
     # the framework and any gems in your application.
+
+    # 默认显示中文
+    config.i18n.default_locale = :zh
+    config.i18n.fallbacks = [:zh, :en]
+
+    config.time_zone = "Asia/Shanghai"
   end
 end

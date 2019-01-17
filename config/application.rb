@@ -21,5 +21,7 @@ module SecretubeCom
     config.i18n.fallbacks = [:zh, :en]
 
     config.time_zone = "Asia/Shanghai"
+
+    config.autoload_paths << "#{Rails.root}/app/utilities"
   end
 end

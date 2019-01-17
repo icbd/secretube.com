@@ -54,6 +54,9 @@ group :development do
   gem "capistrano-rails", "~> 1.3", require: false
   gem 'capistrano-rvm', '~> 0.1.2', require: false
   gem 'capistrano3-puma', '~> 3.1.1', require: false
+
+  # 注释
+  gem 'annotate', '~> 2.7', '>= 2.7.4'
 end
 
 group :test do

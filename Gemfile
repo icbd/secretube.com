@@ -44,6 +44,7 @@ group :development, :test do
   gem 'pry-rails', '~> 0.3.9'
   gem 'pry'
   gem 'pry-byebug'
+  gem 'rb-readline', '~> 0.5.5'
 end
 
 group :development do

@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+user1:
+  email: user1@gmail.com
+  password_digest: <%= Tools.digest_calc("PASSWORD") %>
+  email_valid: true
+  nickname: user1
+
+user2:
+  email: user2@gmail.com
+  password_digest: <%= Tools.digest_calc("PASSWORD") %>
+  email_valid: false
+  nickname: user2

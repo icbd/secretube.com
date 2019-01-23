@@ -44,6 +44,7 @@ group :development, :test do
   gem 'pry-rails', '~> 0.3.9'
   gem 'pry'
   gem 'pry-byebug'
+  gem 'rb-readline', '~> 0.5.5'
 end
 
 group :development do
@@ -51,7 +52,7 @@ group :development do
   gem 'web-console', '>= 3.3.0'
   gem 'listen', '>= 3.0.5', '< 3.2'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
-  gem 'spring'
+  gem "spring", github: "mattbrictson/spring", branch: "honor-bundle-app-config"
   gem 'spring-watcher-listen', '~> 2.0.0'
 
   # capistrano

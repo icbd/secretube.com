@@ -45,8 +45,11 @@ jobs:
           name: run tests
           command: |
             mkdir /tmp/test-results
-            bundle install --path ./vendor/bundle
-            bundle exec rails test
+
+            && bundle install
+
+            && bundle exec rails test
+
 #            TEST_FILES="$(circleci tests glob "spec/**/*_spec.rb" | circleci tests split --split-by=timings)"
 #
 #            bundle exec rspec --format progress \

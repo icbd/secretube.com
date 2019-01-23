@@ -44,11 +44,7 @@ jobs:
       - run:
           name: run tests
           command: |
-            mkdir /tmp/test-results
-
-            && bundle install
-
-            && bundle exec rails test
+            mkdir /tmp/test-results && bundle install && bundle exec rails test
 
 #            TEST_FILES="$(circleci tests glob "spec/**/*_spec.rb" | circleci tests split --split-by=timings)"
 #

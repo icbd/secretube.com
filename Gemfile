@@ -42,6 +42,8 @@ group :development, :test do
 
   gem 'factory_bot_rails', '~> 4.11', '>= 4.11.1'
   gem 'pry-rails', '~> 0.3.9'
+  gem 'pry'
+  gem 'pry-byebug'
 end
 
 group :development do

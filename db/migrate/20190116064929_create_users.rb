@@ -8,7 +8,7 @@ class CreateUsers < ActiveRecord::Migration[5.2]
       t.string :remember_me_token, comment: "记住我 令牌"
       t.string :forgot_pswd_token, comment: "找回密码 令牌"
 
-      t.datetime :delete_at, index: true, comment: "软删除"
+      t.datetime :deleted_at, index: true, comment: "软删除"
 
       t.timestamps
     end

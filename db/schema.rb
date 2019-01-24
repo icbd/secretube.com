@@ -19,8 +19,10 @@ ActiveRecord::Schema.define(version: 2019_01_16_064929) do
     t.boolean "email_valid", default: false
     t.string "remember_me_token"
     t.string "forgot_pswd_token"
+    t.datetime "delete_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["delete_at"], name: "index_users_on_delete_at"
     t.index ["email"], name: "index_users_on_email"
   end
 

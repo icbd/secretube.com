@@ -27,4 +27,28 @@ class UserTest < ActiveSupport::TestCase
     end
   end
 
+  test "user__unique_email" do
+    user = create(:user)
+
+    user_double = build(:user, email: user.email)
+    assert_not user_double.valid?
+    assert_equal ["has already been taken"], user_double.errors[:email]
+  end
+
+  test "user__password_digest" do
+    pswd = SecureRandom.alphanumeric(32)
+
+    user = User.new(email: Faker::Internet.email, password: pswd, password_confirmation: "wrong password")
+    assert_not user.valid?
+
+    user.password_confirmation = pswd
+    assert user.valid?
+
+    user.save!
+
+    assert user.authenticate(pswd)
+    assert_not user.authenticate("wrong password")
+  end
+
+
 end

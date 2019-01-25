@@ -265,6 +265,8 @@ DEPENDENCIES
   faker (~> 1.9, >= 1.9.1)
   jbuilder (~> 2.5)
   listen (>= 3.0.5, < 3.2)
+  mysql2 (~> 0.5.2)
+  paranoia (~> 2.4, >= 2.4.1)
   pry-byebug
   pry-rails (~> 0.3.9)
   puma (~> 3.11)

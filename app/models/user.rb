@@ -3,6 +3,7 @@
 # Table name: users
 #
 #  id                :integer          not null, primary key
+#  deleted_at        :datetime
 #  email             :string           not null
 #  email_valid       :boolean          default(FALSE)
 #  forgot_pswd_token :string
@@ -14,7 +15,8 @@
 #
 # Indexes
 #
-#  index_users_on_email  (email)
+#  index_users_on_deleted_at  (deleted_at)
+#  index_users_on_email       (email)
 #
 
 class User < ApplicationRecord

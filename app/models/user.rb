@@ -18,5 +18,14 @@
 #
 
 class User < ApplicationRecord
-  validates :email, allow_blank: true, format: {with: /\A[^@\s]+@([^@\s]+\.)+[^@\s]+\z/}
+  has_secure_password
+  before_validation :init
+
+  validates :email, allow_blank: true, format: {with: /\A[^@\s]+@([^@\s]+\.)+[^@\s]+\z/}, uniqueness: true
+
+  private
+
+  def init
+    self.nickname = self.email.to_s.split('@').first if nickname.blank?
+  end
 end

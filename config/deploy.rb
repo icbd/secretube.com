@@ -4,7 +4,7 @@ lock "~> 3.11.0"
 set :application, "secretube.com"
 set :repo_url, "git@github.com:icbd/secretube.com.git"
 
-set :linked_dirs, %w(bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system)
+set :linked_dirs, %w(log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system)
 
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp

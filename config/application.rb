@@ -23,5 +23,8 @@ module SecretubeCom
     config.time_zone = "Asia/Shanghai"
 
     config.autoload_paths << "#{Rails.root}/app/utilities"
+
+    # --skip-coffee
+    config.generators.javascript_engine = :js
   end
 end

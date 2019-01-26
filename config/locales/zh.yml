@@ -18,6 +18,8 @@ zh:
   encryption: "Encryption"
   wrong_params: "Wrong Parameters"
   fatal_error: "Fatal Error, Please Email Hello233World@Gmail.com"
+  welcome_come: "欢迎回归自由的互联网 🎉🎉🎉"
+  not_match: "不一致"
 
 
   welcome:
@@ -28,3 +30,16 @@ zh:
       slogan_p3: "让你自由"
       slogan_p4: "做你想做的"
 
+  activerecord:
+    attributes:
+      user:
+        password: "密码"
+        password_confirmation: "两次密码"
+
+    errors:
+      models:
+        user:
+          attributes:
+            email:
+              invalid: "格式有误"
+              taken: "已经存在了"

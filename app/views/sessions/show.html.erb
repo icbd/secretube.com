@@ -7,7 +7,7 @@
 
       <div class="icon-logo text-center mb-4"><%= image_tag "logo.png", width: 72 %></div>
 
-      <%= render "flash" %>
+      <%= render "shared/flash" %>
 
       <%= f.text_field :email, required: "required", autofocus: "autofocus", class: "form-control", placeholder: "Email" %>
       <%= f.password_field :password, required: "required", class: "form-control", placeholder: t("password") %>

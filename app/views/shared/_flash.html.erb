@@ -1,0 +1,15 @@
+<% if flash.present? %>
+  <ul class="list-group shared-flash my-3">
+    <% flash.each do |key, value| %>
+      <% next unless key.in? %w{primary secondary success danger warning info light dark} %>
+
+      <% Array(value).each do |item| %>
+        <li class="list-group-item list-group-item-<%= key %> alert alert-dismissible fade show">
+          <%= item %>
+          <button type="button" class="close" data-dismiss="alert"><span>&times;</span></button>
+        </li>
+      <% end %>
+
+    <% end %>
+  </ul>
+<% end %>

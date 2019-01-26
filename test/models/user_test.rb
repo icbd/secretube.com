@@ -32,7 +32,7 @@ class UserTest < ActiveSupport::TestCase
 
     user_double = build(:user, email: user.email)
     assert_not user_double.valid?
-    assert_equal ["has already been taken"], user_double.errors[:email]
+    assert user_double.errors[:email].present?
   end
 
   test "user__password_digest" do

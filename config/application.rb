@@ -26,5 +26,7 @@ module SecretubeCom
 
     # --skip-coffee
     config.generators.javascript_engine = :js
+
+    config.secret_key_base = "#{ENV["SECRET_KEY_BASE"]}"
   end
 end

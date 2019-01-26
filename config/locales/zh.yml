@@ -1,5 +1,6 @@
 zh:
   login: "登录"
+  register: "免费注册"
   password: "密码"
   password_confirmation: "重复密码"
   create_account: "创建账号"

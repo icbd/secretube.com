@@ -9,7 +9,14 @@ class SessionsController < ApplicationController
     @user = User.new
   end
 
+  # GET
+  # /register
+  def register
+    @user = User.new
+  end
+
   def forgot
+    # TODO
     @user = User.new
   end
 

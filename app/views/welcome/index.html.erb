@@ -24,7 +24,7 @@
     <% if is_logged_in? %>
       <%= link_to t("my_account"), '/todo', class: "register_btn" %>
     <% else %>
-      <%= link_to t("create_account"), '/todo', class: "register_btn" %>
+      <%= link_to t("create_account"), register_url, class: "register_btn" %>
     <% end %>
 
   </div>

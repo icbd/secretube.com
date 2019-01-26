@@ -5,5 +5,10 @@ Rails.application.routes.draw do
     get "forgot", on: :collection
   end
   get "login", to: "sessions#show"
+  get "register", to: "sessions#register"
+
+  resources :users do
+
+  end
 
 end

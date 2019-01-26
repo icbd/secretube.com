@@ -1,11 +1,12 @@
 zh:
   login: "登录"
+  register: "免费注册"
   password: "密码"
   password_confirmation: "重复密码"
   create_account: "创建账号"
   my_account: "My Account"
-  email_not_found: "Not Found"
-  wrong_password: "Wrong"
+  account_not_exist: "账号不存在"
+  wrong_password: "密码有误"
   logout: "Logout"
   help_page: "Helper"
   you_need_more_coins: "You Need More Coins."
@@ -17,6 +18,8 @@ zh:
   encryption: "Encryption"
   wrong_params: "Wrong Parameters"
   fatal_error: "Fatal Error, Please Email Hello233World@Gmail.com"
+  welcome_come: "欢迎回归自由的互联网 🎉🎉🎉"
+  not_match: "不一致"
 
 
   welcome:
@@ -27,3 +30,16 @@ zh:
       slogan_p3: "让你自由"
       slogan_p4: "做你想做的"
 
+  activerecord:
+    attributes:
+      user:
+        password: "密码"
+        password_confirmation: "两次密码"
+
+    errors:
+      models:
+        user:
+          attributes:
+            email:
+              invalid: "格式有误"
+              taken: "已经存在了"

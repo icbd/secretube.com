@@ -3,6 +3,7 @@
 # Table name: users
 #
 #  id                :integer          not null, primary key
+#  deleted_at        :datetime
 #  email             :string           not null
 #  email_valid       :boolean          default(FALSE)
 #  forgot_pswd_token :string
@@ -14,18 +15,28 @@
 #
 # Indexes
 #
-#  index_users_on_email  (email)
+#  index_users_on_deleted_at  (deleted_at)
+#  index_users_on_email       (email)
 #
 
 class User < ApplicationRecord
   has_secure_password
   before_validation :init
+  after_validation :reset_errors_messages
 
-  validates :email, allow_blank: true, format: {with: /\A[^@\s]+@([^@\s]+\.)+[^@\s]+\z/}, uniqueness: true
+  validates :email, allow_blank: true, format: {with: /\A[^@\s]+@([^@\s]+\.)+[^@\s]+\z/}
+  validates :email, uniqueness: true
 
   private
 
   def init
     self.nickname = self.email.to_s.split('@').first if nickname.blank?
+  end
+
+  def reset_errors_messages
+    if errors[:password_confirmation].present?
+      self.errors[:password_confirmation].clear
+      self.errors.add(:password_confirmation, I18n.t("not_match"))
+    end
   end
 end

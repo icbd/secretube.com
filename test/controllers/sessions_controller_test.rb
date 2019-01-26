@@ -27,4 +27,14 @@ class SessionsControllerTest < ActionDispatch::IntegrationTest
     assert_select ".register_btn", I18n.t(:my_account)
   end
 
+
+  test "view login page" do
+    get login_url
+    assert_response :success
+  end
+
+  test "view signup page" do
+    get register_url
+    assert_response :success
+  end
 end

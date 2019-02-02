@@ -13,7 +13,7 @@ module SessionsHelper
     session.delete(:user_id)
   end
 
-  def is_logged_in?
+  def logged_in?
     current_user.present?
   end
 end

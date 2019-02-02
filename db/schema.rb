@@ -12,18 +12,17 @@
 
 ActiveRecord::Schema.define(version: 2019_01_16_064929) do
 
-  create_table "users", force: :cascade do |t|
-    t.string "email", null: false
-    t.string "password_digest"
-    t.string "nickname"
-    t.boolean "email_valid", default: false
-    t.string "remember_me_token"
-    t.string "forgot_pswd_token"
-    t.datetime "deleted_at"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["deleted_at"], name: "index_users_on_deleted_at"
-    t.index ["email"], name: "index_users_on_email"
+  create_table 'users', force: :cascade do |t|
+    t.string 'email', null: false
+    t.string 'password_digest'
+    t.string 'nickname'
+    t.boolean 'email_valid', default: false
+    t.string 'remember_me_token'
+    t.string 'forgot_pswd_token'
+    t.datetime 'deleted_at'
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
+    t.index ['deleted_at'], name: 'index_users_on_deleted_at'
+    t.index ['email'], name: 'index_users_on_email'
   end
-
 end

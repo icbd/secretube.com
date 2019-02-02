@@ -10,6 +10,7 @@
 #  nickname          :string
 #  password_digest   :string
 #  remember_me_token :string
+#  uuid              :string           not null
 #  created_at        :datetime         not null
 #  updated_at        :datetime         not null
 #
@@ -17,9 +18,11 @@
 #
 #  index_users_on_deleted_at  (deleted_at)
 #  index_users_on_email       (email)
+#  index_users_on_uuid        (uuid)
 #
 
 class User < ApplicationRecord
+  include AutoUuid
   has_secure_password
   before_validation :init
   after_validation :reset_errors_messages

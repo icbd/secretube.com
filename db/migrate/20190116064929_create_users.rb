@@ -3,6 +3,7 @@
 class CreateUsers < ActiveRecord::Migration[5.2]
   def change
     create_table :users do |t|
+      t.string :uuid, index: true, unique: true, null: false
       t.string :email, index: true, unique: true, null: false, comment: '用户Email唯一, 非空'
       t.string :password_digest, comment: '密码hash'
       t.string :nickname, comment: '用户昵称, 展示用'

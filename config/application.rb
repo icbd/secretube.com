@@ -18,15 +18,15 @@ module SecretubeCom
 
     # 默认显示中文
     config.i18n.default_locale = :zh
-    config.i18n.fallbacks = [:zh, :en]
+    config.i18n.fallbacks = %i[zh en]
 
-    config.time_zone = "Asia/Shanghai"
+    config.time_zone = 'Asia/Shanghai'
 
     config.autoload_paths << "#{Rails.root}/app/utilities"
 
     # --skip-coffee
     config.generators.javascript_engine = :js
 
-    config.secret_key_base = "#{ENV["SECRET_KEY_BASE"]}"
+    config.secret_key_base = (ENV['SECRET_KEY_BASE']).to_s
   end
 end

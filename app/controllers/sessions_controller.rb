@@ -26,20 +26,17 @@ class SessionsController < ApplicationController
     @user = User.find_by(email: params[:user][:email])
 
     unless @user
-      flash[:warning] = t("account_not_exist")
-    else
-      unless @user.authenticate(params[:user][:password])
-        flash[:warning] = t("wrong_password")
-      else
-        # login
-        login @user
-        # TODO REDIRECT TO
-        redirect_to forgot_sessions_url and return
-      end
+      flash[:warning] = t('account_not_exist')
+      redirect_to(login_url) && return
     end
 
-    # login with errors
-    redirect_to login_url
+    unless @user.authenticate(params[:user][:password])
+      flash[:warning] = t('wrong_password')
+      redirect_to(login_url) && return
+    end
+
+    login @user
+    redirect_to forgot_sessions_url
   end
 
   private

@@ -1,5 +1,5 @@
-server_list = %w(root@172.96.194.92:28897)
-mysql_list = %w(root@172.96.194.92:28897)
+server_list = %w[root@172.96.194.92:28897]
+mysql_list = %w[root@172.96.194.92:28897]
 
 set :rails_env, :production
 
@@ -11,4 +11,4 @@ role :db,  mysql_list
 set :puma_env, fetch(:rails_env)
 set :puma_threads, [1, 2]
 
-set :nginx_server_name, "www.secretube.tk secretube.tk v1.secretube.tk"
+set :nginx_server_name, 'www.secretube.tk secretube.tk v1.secretube.tk'

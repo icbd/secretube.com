@@ -50,6 +50,8 @@ group :development, :test do
   gem 'faker', '~> 1.9', '>= 1.9.1'
   gem 'pry-byebug'
   gem 'pry-rails', '~> 0.3.9'
+
+  gem 'rspec-rails', '~> 3.8'
 end
 
 group :development do

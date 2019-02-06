@@ -77,9 +77,11 @@ group :test do
   gem 'selenium-webdriver'
   # Easy installation and use of chromedriver to run system tests with Chrome
   gem 'chromedriver-helper'
+  gem 'codecov', require: false
   gem 'rspec-rails', '~> 3.8'
   gem 'rspec_junit_formatter', '~> 0.4.1'
   gem 'simplecov', '~> 0.16.1', require: false
+  gem 'simplecov-console', '~> 0.4.2', require: false
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

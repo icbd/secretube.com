@@ -1,6 +1,9 @@
 [![CircleCI](https://circleci.com/gh/icbd/secretube.com/tree/master.svg?style=svg)](https://circleci.com/gh/icbd/secretube.com/tree/master)
 
-## 部署
+## Deploy
+
+Before deploying, we should install: 
+`Ruby 2.6.0` `Nginx` `Lets Encrypted` `Mysql`
 
 ```bash
 bundle exec cap production puma:nginx_config
@@ -9,6 +12,7 @@ bundle exec cap production deploy
 
 ## TODO
 
-  - 异常收集: rollbar
-  - 测试覆盖: simplecov
-  - 代码规范: rubocop
+- [ ] Error Collection: rollbar
+- [ ] Docker Deamon API
+- [ ] Stripe API
+ 

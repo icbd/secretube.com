@@ -1,16 +1,14 @@
 FactoryBot.define do
   factory :user do
-
     transient do
-      random_name { "#{SecureRandom.alphanumeric(5)}" }
-      pswd { "PASSWORD" }
+      pswd { 'PASSWORD' }
     end
 
     uuid { SecureRandom.uuid }
-    email { "#{random_name}@secretube.com" }
+    email { Faker::Internet.email }
     password_digest { Tools.digest_calc(pswd) }
     email_valid { true }
-    nickname { "#{random_name}" }
+    nickname { Faker::Name }
     created_at { 10.day.ago }
     updated_at { 1.day.ago }
   end

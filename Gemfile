@@ -3,6 +3,8 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.6.0'
 
+gem 'bundler', '~> 2.0', '>= 2.0.1'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.2'
 # Use sqlite3 as the database for Active Record
@@ -43,6 +45,7 @@ gem 'paranoia', '~> 2.4', '>= 2.4.1'
 gem 'mysql2', '~> 0.5.2'
 
 gem 'newrelic_rpm'
+gem 'rollbar'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

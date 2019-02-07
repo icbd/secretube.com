@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   end
   get 'login', to: 'sessions#show'
   get 'register', to: 'sessions#register'
+  delete 'logout', to: 'sessions#destroy'
 
   resources :users do
   end

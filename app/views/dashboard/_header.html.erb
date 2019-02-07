@@ -1,0 +1,24 @@
+<div id="header">
+  <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
+    <h5 class="my-0 mr-md-auto font-weight-normal">
+      <%= link_to 'Secretube', welcome_index_url %>
+    </h5>
+    <nav class="my-2 my-md-0 mr-md-3">
+      <a class="p-2 text-dark" href="#">Price</a>
+      <a class="p-2 text-dark" href="#">Enterprise</a>
+      <a class="p-2 text-dark" href="#">Helper</a>
+    </nav>
+
+    <ul class="navbar-nav">
+      <li class="nav-item dropdown ">
+        <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown"><%= t('setting') %></a>
+        <div class="dropdown-menu dropdown-menu-right">
+          <a class="dropdown-item" href="#">Action</a>
+          <a class="dropdown-item" href="#">Another action</a>
+          <div class="dropdown-divider"></div>
+          <%= link_to t('logout'), logout_path, method: :delete, class: 'dropdown-item' %>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>

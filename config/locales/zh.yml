@@ -7,7 +7,7 @@ zh:
   my_account: "我的账号"
   account_not_exist: "账号不存在"
   wrong_password: "密码有误"
-  logout: "Logout"
+  logout: "安全退出"
   help_page: "Helper"
   you_need_more_coins: "You Need More Coins."
   create_success: "Create Success."
@@ -20,6 +20,7 @@ zh:
   fatal_error: "Fatal Error, Please Email Hello233World@Gmail.com"
   welcome_come: "欢迎回归自由的互联网 🎉🎉🎉"
   not_match: "不一致"
+  setting: "我的设置"
 
 
   welcome:

@@ -6,12 +6,11 @@ class UsersController < ApplicationController
     if user.save
       flash[:success] = I18n.t('welcome_come')
       # TODO: SEND EMAIL
-      redirect_to '/' # TODO: dashboard_url
+      redirect_to dashboard_url
     else
       flash[:warning] = user.errors.full_messages
       redirect_to register_url
     end
-    # binding.pry
   end
 
   private

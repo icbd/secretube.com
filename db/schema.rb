@@ -10,7 +10,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_01_16_064929) do
+ActiveRecord::Schema.define(version: 2019_02_08_123010) do
+
+  create_table "machines", force: :cascade do |t|
+    t.string "uuid", null: false
+    t.text "description"
+    t.text "public_key"
+    t.text "private_key"
+    t.string "ipv4", null: false
+    t.string "ipv6"
+    t.integer "max_support_amount", default: 100
+    t.integer "count_of_channels", default: 0
+    t.integer "admin_user_id"
+    t.datetime "deleted_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["deleted_at"], name: "index_machines_on_deleted_at"
+    t.index ["ipv4"], name: "index_machines_on_ipv4"
+    t.index ["ipv6"], name: "index_machines_on_ipv6"
+    t.index ["uuid"], name: "index_machines_on_uuid"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "uuid", null: false

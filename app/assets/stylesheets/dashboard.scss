@@ -1,0 +1,15 @@
+$text_high_light: 0 0 0.2em lightblue;
+
+.text-high-light {
+  text-shadow: $text_high_light;
+}
+
+#header {
+  a {
+    text-decoration: none;
+
+    &:hover {
+      text-shadow: $text_high_light;
+    }
+  }
+}

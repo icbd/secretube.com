@@ -6,9 +6,11 @@ Rails.application.routes.draw do
   end
   get 'login', to: 'sessions#show'
   get 'register', to: 'sessions#register'
+  delete 'logout', to: 'sessions#destroy'
 
   resources :users do
   end
 
   get 'dashboard', to: 'dashboard#index'
+  get 'price', to: 'dashboard#price'
 end

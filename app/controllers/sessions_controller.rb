@@ -36,12 +36,13 @@ class SessionsController < ApplicationController
     end
 
     login @user
-    redirect_to forgot_sessions_url
+    redirect_to dashboard_url
   end
 
-  private
-
-  def safe_params
-    params.require(:user).permit(:email, :password, :password_confirmation)
+  # DELETE
+  # /logout
+  def destroy
+    logout if current_user
+    redirect_to welcome_index_url
   end
 end

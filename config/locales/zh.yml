@@ -8,7 +8,7 @@ zh:
   account_not_exist: "账号不存在"
   wrong_password: "密码有误"
   logout: "安全退出"
-  help_page: "Helper"
+  helper: "快速入门"
   you_need_more_coins: "You Need More Coins."
   create_success: "Create Success."
   system_is_too_busy: "System is Too Busy."
@@ -21,6 +21,8 @@ zh:
   welcome_come: "欢迎回归自由的互联网 🎉🎉🎉"
   not_match: "不一致"
   setting: "我的设置"
+  price: "成本价格"
+  get_started: "开始吧!"
 
 
   welcome:
@@ -44,3 +46,22 @@ zh:
             email:
               invalid: "格式有误"
               taken: "已经存在了"
+
+  dashboard:
+    price:
+      year: "年"
+      month: "月"
+      day: "天"
+      hour: "小时"
+
+      try: "体验版"
+      try_line1: "附送100M流量"
+      try_line2: "超出部分 $0.09 / M"
+
+      efficient: "高能版"
+      efficient_line1: "附送300M流量"
+      efficient_line2: "超出部分 $0.09 / M"
+
+      enterprise: "专线版"
+      enterprise_line1: "独享专线"
+      enterprise_line2: "无限流量"

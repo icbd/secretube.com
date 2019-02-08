@@ -12,4 +12,5 @@ Rails.application.routes.draw do
   end
 
   get 'dashboard', to: 'dashboard#index'
+  get 'price', to: 'dashboard#price'
 end

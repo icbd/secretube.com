@@ -8,7 +8,7 @@ en:
   account_not_exist: "Account Not Exist"
   wrong_password: "Wrong Password"
   logout: "Logout"
-  help_page: "Helper"
+  helper: "Helper Doc"
   you_need_more_coins: "You Need More Coins."
   create_success: "Create Success."
   system_is_too_busy: "System is Too Busy."
@@ -21,6 +21,8 @@ en:
   welcome_come: "Welcome to Freedom World 🎉🎉🎉"
   not_match: "Not Match"
   setting: "My Setting"
+  price: "Price"
+  get_started: "Get Started"
 
 
   welcome:
@@ -30,4 +32,23 @@ en:
       slogan_p2: "More Secret"
       slogan_p3: "Let You Free"
       slogan_p4: "Do What You Love"
+
+  dashboard:
+    price:
+      year: "Year"
+      month: "Month"
+      day: "Day"
+      hour: "Hour"
+
+      try: "Newbie Plan"
+      try_line1: "Included 100M data"
+      try_line2: "Exceeding Part $0.09 / M"
+
+      efficient: "Efficient Plan"
+      efficient_line1: "Included 1000M data"
+      efficient_line2: "Exceeding Part $0.09 / M"
+
+      enterprise: "Group Plan"
+      enterprise_line1: "Exclusive Line"
+      enterprise_line2: "Unlimited Data"
 

@@ -55,11 +55,11 @@ zh:
       hour: "小时"
 
       try: "体验版"
-      try_line1: "附送100M流量"
+      try_line1: "包含100M流量"
       try_line2: "超出部分 $0.09 / M"
 
       efficient: "高能版"
-      efficient_line1: "附送300M流量"
+      efficient_line1: "包含300M流量"
       efficient_line2: "超出部分 $0.09 / M"
 
       enterprise: "专线版"

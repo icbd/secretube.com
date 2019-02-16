@@ -9,6 +9,7 @@
 #  forgot_pswd_token :string
 #  nickname          :string
 #  password_digest   :string
+#  phone_number      :string
 #  remember_me_token :string
 #  uuid              :string           not null
 #  created_at        :datetime         not null
@@ -26,6 +27,8 @@ class User < ApplicationRecord
   has_secure_password
   before_validation :init
   after_validation :reset_errors_messages
+
+  has_many :notifications
 
   validates :email, allow_blank: true, format: { with: /\A[^@\s]+@([^@\s]+\.)+[^@\s]+\z/ }
   validates :email, uniqueness: true

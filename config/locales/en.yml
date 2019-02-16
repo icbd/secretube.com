@@ -23,6 +23,7 @@ en:
   setting: "My Setting"
   price: "Price"
   get_started: "Get Started"
+  frequent: "The action is too frequent."
 
 
   welcome:

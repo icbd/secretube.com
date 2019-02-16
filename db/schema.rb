@@ -10,7 +10,53 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_01_16_064929) do
+ActiveRecord::Schema.define(version: 2019_02_16_035027) do
+
+  create_table "channels", force: :cascade do |t|
+    t.string "uuid", null: false
+    t.text "description"
+    t.integer "machine_id", null: false
+    t.integer "user_id"
+    t.integer "ipv4_port"
+    t.datetime "end_at"
+    t.datetime "deleted_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["deleted_at"], name: "index_channels_on_deleted_at"
+    t.index ["machine_id"], name: "index_channels_on_machine_id"
+    t.index ["user_id"], name: "index_channels_on_user_id"
+    t.index ["uuid"], name: "index_channels_on_uuid"
+  end
+
+  create_table "machines", force: :cascade do |t|
+    t.string "uuid", null: false
+    t.text "description"
+    t.text "public_key"
+    t.text "private_key"
+    t.string "ipv4", null: false
+    t.string "ipv6"
+    t.integer "max_support_amount", default: 100
+    t.integer "count_of_channels", default: 0
+    t.integer "admin_user_id"
+    t.datetime "deleted_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["deleted_at"], name: "index_machines_on_deleted_at"
+    t.index ["ipv4"], name: "index_machines_on_ipv4"
+    t.index ["ipv6"], name: "index_machines_on_ipv6"
+    t.index ["uuid"], name: "index_machines_on_uuid"
+  end
+
+  create_table "notifications", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.string "content", null: false
+    t.integer "category", null: false
+    t.integer "status", default: 1, null: false
+    t.datetime "deleted_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["deleted_at"], name: "index_notifications_on_deleted_at"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "uuid", null: false
@@ -23,6 +69,7 @@ ActiveRecord::Schema.define(version: 2019_01_16_064929) do
     t.datetime "deleted_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "phone_number"
     t.index ["deleted_at"], name: "index_users_on_deleted_at"
     t.index ["email"], name: "index_users_on_email"
     t.index ["uuid"], name: "index_users_on_uuid"

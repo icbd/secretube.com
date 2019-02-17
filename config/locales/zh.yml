@@ -66,3 +66,7 @@ zh:
       enterprise: "专线版"
       enterprise_line1: "独享专线"
       enterprise_line2: "无限流量"
+
+  notification:
+    auth_phone_number: "请先认证您的手机号"
+    authed_phone_number: "您的手机号已经认证过了"

@@ -53,3 +53,6 @@ en:
       enterprise_line1: "Exclusive Line"
       enterprise_line2: "Unlimited Data"
 
+  notification:
+    auth_phone_number: "Please Authenticate Phone Number"
+    authed_phone_number: "Have Authenticated the Phone Number"

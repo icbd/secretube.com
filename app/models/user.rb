@@ -2,18 +2,19 @@
 #
 # Table name: users
 #
-#  id                :integer          not null, primary key
-#  deleted_at        :datetime
-#  email             :string           not null
-#  email_valid       :boolean          default(FALSE)
-#  forgot_pswd_token :string
-#  nickname          :string
-#  password_digest   :string
-#  phone_number      :string
-#  remember_me_token :string
-#  uuid              :string           not null
-#  created_at        :datetime         not null
-#  updated_at        :datetime         not null
+#  id                 :integer          not null, primary key
+#  deleted_at         :datetime
+#  email              :string           not null
+#  email_valid        :boolean          default(FALSE)
+#  forgot_pswd_token  :string
+#  nickname           :string
+#  password_digest    :string
+#  phone_number       :string
+#  phone_number_valid :boolean          default(FALSE)
+#  remember_me_token  :string
+#  uuid               :string           not null
+#  created_at         :datetime         not null
+#  updated_at         :datetime         not null
 #
 # Indexes
 #

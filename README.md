@@ -13,6 +13,16 @@
 Before deploying, we should install: 
 `Ruby 2.6.0` `Nginx` `Lets Encrypted` `Mysql`
 
+
+You must use Bundler 2 or greater with this lockfile:
+
+```bash
+gem update --system
+gem install bundler
+bundle update --bundler
+```
+
+
 Copy `secret.example.yml` as `secret.yml`. If you use `rails console`, fill out the ENV to `/etc/profile` on the server.
 
 ```bash

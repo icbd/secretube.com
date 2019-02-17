@@ -2,17 +2,19 @@
 #
 # Table name: users
 #
-#  id                :integer          not null, primary key
-#  deleted_at        :datetime
-#  email             :string           not null
-#  email_valid       :boolean          default(FALSE)
-#  forgot_pswd_token :string
-#  nickname          :string
-#  password_digest   :string
-#  remember_me_token :string
-#  uuid              :string           not null
-#  created_at        :datetime         not null
-#  updated_at        :datetime         not null
+#  id                 :integer          not null, primary key
+#  deleted_at         :datetime
+#  email              :string           not null
+#  email_valid        :boolean          default(FALSE)
+#  forgot_pswd_token  :string
+#  nickname           :string
+#  password_digest    :string
+#  phone_number       :string
+#  phone_number_valid :boolean          default(FALSE)
+#  remember_me_token  :string
+#  uuid               :string           not null
+#  created_at         :datetime         not null
+#  updated_at         :datetime         not null
 #
 # Indexes
 #
@@ -26,6 +28,8 @@ class User < ApplicationRecord
   has_secure_password
   before_validation :init
   after_validation :reset_errors_messages
+
+  has_many :notifications
 
   validates :email, allow_blank: true, format: { with: /\A[^@\s]+@([^@\s]+\.)+[^@\s]+\z/ }
   validates :email, uniqueness: true

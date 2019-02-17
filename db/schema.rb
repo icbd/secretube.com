@@ -10,7 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_01_16_064929) do
+ActiveRecord::Schema.define(version: 2019_02_16_035027) do
+
+  create_table "notifications", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.string "content", null: false
+    t.integer "category", null: false
+    t.integer "status", default: 1, null: false
+    t.text "description"
+    t.datetime "deleted_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["deleted_at"], name: "index_notifications_on_deleted_at"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "uuid", null: false
@@ -23,6 +35,8 @@ ActiveRecord::Schema.define(version: 2019_01_16_064929) do
     t.datetime "deleted_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "phone_number"
+    t.boolean "phone_number_valid", default: false
     t.index ["deleted_at"], name: "index_users_on_deleted_at"
     t.index ["email"], name: "index_users_on_email"
     t.index ["uuid"], name: "index_users_on_uuid"

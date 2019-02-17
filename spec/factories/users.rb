@@ -8,7 +8,7 @@ FactoryBot.define do
     email { Faker::Internet.email }
     password_digest { Tools.digest_calc(pswd) }
     email_valid { true }
-    nickname { Faker::Name }
+    nickname { Faker::Name.name }
     created_at { 10.day.ago }
     updated_at { 1.day.ago }
   end

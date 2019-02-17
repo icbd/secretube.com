@@ -23,6 +23,7 @@ en:
   setting: "My Setting"
   price: "Price"
   get_started: "Get Started"
+  frequent: "The action is too frequent."
 
 
   welcome:
@@ -52,3 +53,6 @@ en:
       enterprise_line1: "Exclusive Line"
       enterprise_line2: "Unlimited Data"
 
+  notification:
+    auth_phone_number: "Please Authenticate Phone Number"
+    authed_phone_number: "Have Authenticated the Phone Number"

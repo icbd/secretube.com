@@ -2,7 +2,7 @@ module Tools
   class << self
     # 生产随机字符串
     # 仅包含字符和数字, 大小写敏感
-    def generate_token(length = 20)
+    def generate_token(length: 20)
       SecureRandom.alphanumeric(length)
     end
 
@@ -15,7 +15,7 @@ module Tools
 
     # 密码是否匹配
     # By BCrypt
-    def digest_auth?(origin_string, digest)
+    def digest_auth?(origin_string:, digest:)
       return false if digest.blank?
 
       BCrypt::Password.new(digest).is_password?(origin_string)

@@ -20,5 +20,15 @@ module Tools
 
       BCrypt::Password.new(digest).is_password?(origin_string)
     end
+
+    # 验证码生成器, 仅数字
+    def generate_verify_code(length: 4)
+      codes = []
+      length.times do
+        codes << rand(10)
+      end
+
+      codes.join
+    end
   end
 end

@@ -2,15 +2,17 @@
 #
 # Table name: notifications
 #
-#  id          :integer          not null, primary key
-#  category    :integer          not null
-#  content     :string           not null
-#  deleted_at  :datetime
-#  description :text
-#  status      :integer          default("pending"), not null
-#  created_at  :datetime         not null
-#  updated_at  :datetime         not null
-#  user_id     :integer          not null
+#  id                            :integer          not null, primary key
+#  category                      :integer          not null
+#  content                       :string           not null
+#  deleted_at                    :datetime
+#  description                   :text
+#  status                        :integer          default("pending"), not null
+#  verification_code             :string
+#  verification_code_usage_count :integer          default(0)
+#  created_at                    :datetime         not null
+#  updated_at                    :datetime         not null
+#  user_id                       :integer          not null
 #
 # Indexes
 #
@@ -35,9 +37,30 @@ class Notification < ApplicationRecord
     failed: 3
   }
 
+  before_validation :init_verification_code, on: :create
   validates :category, :content, :user_id, presence: true
   validate :check_limit, on: :create
   validate :check_available, on: :create
+
+  class << self
+    def matched?(user_id:, category:, code:, available_timeout: 3.minute.ago, touch_usage_count: true)
+      notification = where(user_id: user_id,
+                           category: category,
+                           verification_code: code,
+                           verification_code_usage_count: 0)
+                     .where('created_at > ?', available_timeout)
+                     .order('id DESC')
+                     .last
+
+      return false unless notification
+
+      if touch_usage_count
+        notification.verification_code_usage_count += 1
+        notification.save!
+      end
+      true
+    end
+  end
 
   def execute
     return unless valid?
@@ -77,14 +100,20 @@ class Notification < ApplicationRecord
                                       access_key_id: ENV['AWS_SMS_ACCESS_KEY_ID'],
                                       secret_access_key: ENV['AWS_SMS_SECRET_ACCESS_KEY'],
                                       http_wire_trace: !Rails.env.production?)
-    Struct.new('SMSResponse', :status, :message) unless 'Struct::SMSResponse'.safe_constantize
 
     begin
       response = sns_client.publish(phone_number: user.phone_number, message: content)
 
-      Struct::SMSResponse.new(true, response.message_id)
+      OpenStruct.new(status: true, message: response.message_id)
     rescue Aws::SNS::Errors::InvalidParameter => exp
-      Struct::SMSResponse.new(false, exp.to_s)
+      OpenStruct.new(status: false, message: exp.to_s)
     end
+  end
+
+  def init_verification_code
+    return unless %i[register password].include?(category.to_sym)
+
+    self.verification_code = Tools.generate_verify_code
+    self.content = I18n.t("notification.#{category}_sms_template", verification_code: verification_code)
   end
 end

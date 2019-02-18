@@ -56,3 +56,5 @@ en:
   notification:
     auth_phone_number: "Please Authenticate Phone Number"
     authed_phone_number: "Have Authenticated the Phone Number"
+    register_sms_template: "【Secretube】Your Verification Code: %{verification_code}"
+    password_sms_template: "【Secretube】Your Verification Code: %{verification_code}"

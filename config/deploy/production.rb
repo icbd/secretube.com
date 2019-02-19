@@ -11,4 +11,4 @@ role :db,  mysql_list
 set :puma_env, fetch(:rails_env)
 set :puma_threads, [1, 2]
 
-set :nginx_server_name, 'www.secretube.tk secretube.tk v1.secretube.tk'
+set :nginx_server_name, 'www.secretube.org secretube.org www.secretube.tk secretube.tk v1.secretube.tk'

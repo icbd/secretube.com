@@ -70,3 +70,5 @@ zh:
   notification:
     auth_phone_number: "请先认证您的手机号"
     authed_phone_number: "您的手机号已经认证过了"
+    register_sms_template: "【Secretube】您的验证码是: %{verification_code}"
+    password_sms_template: "【Secretube】您的验证码是: %{verification_code}"

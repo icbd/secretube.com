@@ -1,7 +1,7 @@
 ## OS Image
 
 ```text
-
+Centos 7 x86_64 bbr
 ```
 
 ## Basic
@@ -11,7 +11,12 @@ yum update -y
 yum install -y yum-utils
 yum install -y epel-release
 yum-config-manager --enable epel
-yum install -y openssl-devel git-core zlib gcc-c++ patch readline readline-devel libyaml-devel libffi-devel make bzip2 autoconf automake libtool bison curl sqlite-devel net-tools python2-pip telnet nc htop
+
+yum install -y \
+    openssl-devel git-core zlib gcc-c++ \
+    patch readline readline-devel libyaml-devel libffi-devel \
+    make bzip2 autoconf automake libtool bison curl \
+    sqlite-devel net-tools python2-pip telnet nc htop
 ```
 
 ## Set Iptables
@@ -80,8 +85,31 @@ systemctl daemon-reload
 systemctl restart docker.service
 ```
 
+## Pull Shadowsocks Image
+
+```bash
+docker pull shadowsocks/shadowsocks-libev
+```
+
+Start a container to test:
+
+```bash
+docker run \
+    -e PASSWORD=%{YourPassword} -e METHOD=aes-256-cfb \
+    -p %{HostPort}:8388/tcp -p %{HostPort}:8388/udp \
+    --rm \
+    -m 20M \
+    --name first-test \
+    -d shadowsocks/shadowsocks-libev
+```
+
+
+## References
 
 [https://success.docker.com/article/how-do-i-enable-the-remote-api-for-dockerd](https://success.docker.com/article/how-do-i-enable-the-remote-api-for-dockerd)
+
 [https://docs.docker.com/engine/api/v1.39/](https://docs.docker.com/engine/api/v1.39/)
+
 [https://docs.docker.com/engine/reference/commandline/run/](https://docs.docker.com/engine/reference/commandline/run/)
+
 [https://hub.docker.com/r/shadowsocks/shadowsocks-libev/dockerfile](https://hub.docker.com/r/shadowsocks/shadowsocks-libev/dockerfile)

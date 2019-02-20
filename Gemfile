@@ -48,6 +48,7 @@ gem 'aws-sdk', '~> 3.0', '>= 3.0.1'
 gem 'faraday', '~> 0.15.4'
 gem 'newrelic_rpm'
 gem 'rollbar'
+gem 'whenever', '~> 0.10.0', require: false
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

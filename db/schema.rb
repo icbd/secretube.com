@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(version: 2019_02_20_014153) do
     t.datetime "updated_at", null: false
     t.string "domain"
     t.integer "docker_daemon_port", default: 23000, null: false
+    t.integer "status", default: 1, null: false
     t.index ["deleted_at"], name: "index_machines_on_deleted_at"
     t.index ["ipv4"], name: "index_machines_on_ipv4"
     t.index ["ipv6"], name: "index_machines_on_ipv6"

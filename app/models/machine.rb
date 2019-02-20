@@ -13,6 +13,7 @@
 #  max_support_amount :integer          default(100)
 #  private_key        :text
 #  public_key         :text
+#  status             :integer          default("pending"), not null
 #  uuid               :string           not null
 #  created_at         :datetime         not null
 #  updated_at         :datetime         not null
@@ -29,6 +30,12 @@
 class Machine < ApplicationRecord
   include AutoUuid
   include DockerEngine
+
+  enum status: {
+    pending: 1,
+    serving: 2,
+    closed: 3
+  }
 
   validates :ipv4, presence: true, uniqueness: true
   validates :max_support_amount, numericality: { greater_than_or_equal_to: 0 }

@@ -6,6 +6,8 @@
 #  count_of_channels  :integer          default(0)
 #  deleted_at         :datetime
 #  description        :text
+#  docker_daemon_port :integer          default(23000), not null
+#  domain             :string
 #  ipv4               :string           not null
 #  ipv6               :string
 #  max_support_amount :integer          default(100)
@@ -26,6 +28,7 @@
 
 class Machine < ApplicationRecord
   include AutoUuid
+  include DockerEngine
 
   validates :ipv4, presence: true, uniqueness: true
   validates :max_support_amount, numericality: { greater_than_or_equal_to: 0 }

@@ -19,9 +19,10 @@ class MachinesHealthyService
 
       errors.each do |admin_user_id, ipv4_list|
         user = User.find_by(id: admin_user_id)
-
         SmsService.publish(phone_number: user.phone_number, message: ipv4_list.join(' | ')) if user&.phone_number_valid?
       end
+
+      errors
     end
   end
 end

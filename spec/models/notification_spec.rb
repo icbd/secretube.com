@@ -41,7 +41,7 @@ RSpec.describe Notification, type: :model do
 
     it 'success' do
       mock_response = double(status: true, message: 'message id')
-      allow(notification_to_advertise).to receive(:send_sms).and_return(mock_response)
+      allow(SmsService).to receive(:publish).and_return(mock_response)
 
       result = notification_to_advertise.execute
       expect(result).to eq true

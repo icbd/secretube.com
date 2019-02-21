@@ -11,8 +11,10 @@ class SmsService
         response = @sms_client.publish(phone_number: phone_number, message: message)
 
         OpenStruct.new(status: true, message: response.message_id)
-      rescue Aws::SNS::Errors::InvalidParameter => exp
-        OpenStruct.new(status: false, message: exp.to_s)
+      rescue Aws::SNS::Errors::InvalidParameter => exception
+        OpenStruct.new(status: false, message: exception.to_s)
+      rescue StandardError => exception
+        OpenStruct.new(status: false, message: "Internal Server Error")
       end
     end
   end

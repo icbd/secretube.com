@@ -9,14 +9,10 @@ module DockerEngine
     response_of_create = create_container(port: port, password: password, name: name)
     return unless response_of_create.success?
 
-    begin
-      container_id = JSON.parse(response_of_create.body).fetch('Id')
-    rescue JSON::ParserError
-      return false
-    rescue KeyError
-      return false
-    end
+    container_id = JSON.parse(response_of_create.body).fetch('Id')
     start_container(container_id: container_id)
+  rescue StandardError
+    false
   end
 
   # https://docs.docker.com/engine/api/v1.39/#operation/ContainerCreate

@@ -14,7 +14,8 @@ class SmsService
       rescue Aws::SNS::Errors::InvalidParameter => exception
         OpenStruct.new(status: false, message: exception.to_s)
       rescue StandardError => exception
-        OpenStruct.new(status: false, message: "Internal Server Error")
+        Rails.logger.warn exception
+        OpenStruct.new(status: false, message: 'Internal Server Error')
       end
     end
   end

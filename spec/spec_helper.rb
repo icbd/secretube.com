@@ -21,7 +21,7 @@ require 'active_record'
 
 # SimpleCov.formatter = SimpleCov::Formatter::Console
 # SimpleCov.formatter = SimpleCov::Formatter::HTMLFormatter
-SimpleCov.formatter = ENV['SIMPLECOV_FORMATTER'].safe_constantize || SimpleCov::Formatter::Codecov
+SimpleCov.formatter = ENV['SIMPLECOV_FORMATTER']&.safe_constantize || SimpleCov::Formatter::Codecov
 
 SimpleCov.start
 

@@ -1,8 +1,8 @@
 # config valid for current version and patch releases of Capistrano
 lock '~> 3.11.0'
 
-set :application, 'secretube.com'
-set :repo_url, 'git@github.com:icbd/secretube.com.git'
+set :application, 'secretube.org'
+set :repo_url, 'git@github.com:icbd/secretube.org.git'
 
 set :linked_dirs, %w[log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system]
 

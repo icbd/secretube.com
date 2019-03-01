@@ -1,6 +1,6 @@
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/43de7e8c15ca45d798a79cd9afdb1ff8)](https://app.codacy.com/app/icbd/secretube.com?utm_source=github.com&utm_medium=referral&utm_content=icbd/secretube.com&utm_campaign=Badge_Grade_Settings)
-[![CircleCI](https://circleci.com/gh/icbd/secretube.com/tree/master.svg?style=svg)](https://circleci.com/gh/icbd/secretube.com/tree/master)
-[![codecov.io](https://codecov.io/github/icbd/secretube.com/coverage.svg?branch=master)](https://codecov.io/github/icbd/secretube.com?branch=master)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/43de7e8c15ca45d798a79cd9afdb1ff8)](https://app.codacy.com/app/icbd/secretube.org?utm_source=github.com&utm_medium=referral&utm_content=icbd/secretube.org&utm_campaign=Badge_Grade_Settings)
+[![CircleCI](https://circleci.com/gh/icbd/secretube.org/tree/master.svg?style=svg)](https://circleci.com/gh/icbd/secretube.org/tree/master)
+[![codecov.io](https://codecov.io/github/icbd/secretube.org/coverage.svg?branch=master)](https://codecov.io/github/icbd/secretube.org?branch=master)
 
 
 ## Design

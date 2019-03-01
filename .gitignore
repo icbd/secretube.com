@@ -34,3 +34,4 @@
 config/secret.yml
 
 /coverage
+.DS_Store

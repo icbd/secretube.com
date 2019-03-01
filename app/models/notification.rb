@@ -96,18 +96,7 @@ class Notification < ApplicationRecord
   # @return
   # Struct::SMSResponse
   def send_sms
-    sns_client = Aws::SNS::Client.new(region: 'us-east-1',
-                                      access_key_id: ENV['AWS_SMS_ACCESS_KEY_ID'],
-                                      secret_access_key: ENV['AWS_SMS_SECRET_ACCESS_KEY'],
-                                      http_wire_trace: !Rails.env.production?)
-
-    begin
-      response = sns_client.publish(phone_number: user.phone_number, message: content)
-
-      OpenStruct.new(status: true, message: response.message_id)
-    rescue Aws::SNS::Errors::InvalidParameter => exp
-      OpenStruct.new(status: false, message: exp.to_s)
-    end
+    SmsService.publish(phone_number: user.phone_number, message: content)
   end
 
   def init_verification_code

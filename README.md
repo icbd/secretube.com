@@ -36,4 +36,23 @@ bundle exec cap production deploy
 -  [ ] Error Collection: rollbar
 -  [ ] Docker Deamon API
 -  [ ] Stripe API
- 
+
+## Test
+
+Default use `SimpleCov::Formatter::Codecov`, will send the report to Codecov.
+
+```bash
+rspec
+```
+
+Print the report on console.
+
+```bash
+SIMPLECOV_FORMATTER="SimpleCov::Formatter::Console" rspec
+```
+
+Coverage report generated for RSpec to `./coverage`.
+
+```bash
+SIMPLECOV_FORMATTER="SimpleCov::Formatter::HTMLFormatter" rspec
+```
